@@ -12,15 +12,16 @@ class Joke extends React.Component {
   downVote() {
     this.props.vote(this.props.id, -1);
   }
+
   render() {
     return (
       <div className="Joke">
         <div className="Joke-votearea">
-          <button onClick={upVote}>
+          <button onClick={this.upVote.bind(this)}>
             <i className="fas fa-thumbs-up" />
           </button>
 
-          <button onClick={downVote}>
+          <button onClick={this.downVote.bind(this)}>
             <i className="fas fa-thumbs-down" />
           </button>
 
